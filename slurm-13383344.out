@@ -1,0 +1,49 @@
+Using device: cuda
+Loaded 36548 reviews
+Feature matrix shape: (36548, 5000)
+Train: (29238, 5000), Dev: (3655, 5000), Test: (3655, 5000)
+
+Training Model 1 (SGD)...
+  [M1] Epoch 100/500, Loss: 0.4176
+  [M1] Epoch 200/500, Loss: 0.3999
+  [M1] Epoch 300/500, Loss: 0.3942
+  [M1] Epoch 400/500, Loss: 0.3924
+  [M1] Epoch 500/500, Loss: 0.3909
+Saved loss_model1.png
+
+=== Model 1 Results ===
+Accuracy:  0.8484
+Precision: 0.8467
+Recall:    0.8424
+F1 Score:  0.8442
+
+Training Model 2 (Adam)...
+  [M2] Epoch 100/500, Loss: 0.2824
+  [M2] Epoch 200/500, Loss: 0.2828
+  [M2] Epoch 300/500, Loss: 0.2834
+  [M2] Epoch 400/500, Loss: 0.2839
+  [M2] Epoch 500/500, Loss: 0.2831
+Saved loss_model2.png
+
+=== Model 2 Results ===
+Accuracy:  0.8569
+Precision: 0.8541
+Recall:    0.8531
+F1 Score:  0.8536
+
+=== Comparison ===
+Metric          Model 1    Model 2      Delta
+--------------------------------------------
+Accuracy         0.8484     0.8569    +0.0085
+Precision        0.8467     0.8541    +0.0074
+Recall           0.8424     0.8531    +0.0107
+F1 Score         0.8442     0.8536    +0.0094
+
+Saved roc_comparison.png
+AUC - Model 1: 0.9196, Model 2: 0.9295
+
+Running bootstrap (1000 samples)...
+AUC difference (M2 - M1): 0.0100
+95% CI: [0.0063, 0.0136]
+One-tailed p-value (H1: AUC_M2 > AUC_M1): 0.0000
+=> Model 2 AUC is significantly higher than Model 1 (p < 0.05)
