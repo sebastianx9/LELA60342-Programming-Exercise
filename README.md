@@ -79,6 +79,7 @@ results:
 
 As we can see in the results, the confidence interval sits entirely above zero and the p-value is well below 0.05. As the proportion of 1,000 bootstrap resamples of the test set in which AUC_M2-AUC_M1<=0, the low p-value leads to rejection of the null hypothesis, indicating that Model 2 has significantly higher discriminative power than Model 1.
 
+### Conclusion
 All in all, in this experiment, we successfully improved performance of a sentiment classifier and used boostrapping to test the significance of such improvement.
 
 
