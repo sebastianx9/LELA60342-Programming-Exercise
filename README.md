@@ -4,7 +4,7 @@
 
 ## Overview
 
-In model 1, modifications are made to train a sentiment classifier of Amazon reviews from the CL1 coursework with pytorch implementations including model specification, batch generation, the backwards step, loss function and optimisation. 
+In model 1, we train a sentiment classifier of Amazon reviews from the CL1 coursework with pytorch implementations including model specification, batch generation, the backwards step, loss function and optimisation. 
 
 In a attempt to imporve the performance of model 1, the second model is created through a few adjustments in terms of hyperparameters. The features are one-hot endcoded bag-of-words vectors built from the 5000 most frequent tokens in the dataset. Both models are based on logistic regeression to predict the sentiment (positive or negative) of Amazon product reviews, and both are implemented in PyTorch and run on a GPU via CUDA. 
 
