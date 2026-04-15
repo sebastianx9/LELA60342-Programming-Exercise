@@ -6,13 +6,15 @@
 
 In model 1, we train a sentiment classifier of Amazon reviews from the CL1 coursework with pytorch implementations including model specification, batch generation, the backwards step, loss function and optimisation. 
 
-In a attempt to imporve the performance of model 1, the second model is created through a few adjustments to the hyperparameters. The features are one-hot endcoded bag-of-words vectors built from the 5000 most frequent tokens in the dataset. Both models are based on logistic regression to predict the sentiment (positive or negative) of Amazon product reviews, and both are implemented in PyTorch and run on a GPU via CUDA. 
+In a attempt to imporve the performance of model 1, the second model is created through a few adjustments to the hyperparameters. Both models are based on logistic regression to predict the sentiment (positive or negative) of Amazon product reviews, and the features are one-hot endcoded bag-of-words vectors built from the 5000 most frequent tokens in the dataset.
 
 As for evaluation, besides accuracy and F1-scores, area under the ROC curves were calculated for both models to examine their discriminative power across all thresholds instead of a single cutoff at 50%. Such examination allows insight into how well the models perform with thresholds set catering to a particular need of the task. 
 
 To test the significance of the models' difference in AUC, bootstrap sampling is used on the test set. With corresponding predictions from both models, the AUC difference and its variance are calculated. 
 
-In the results, with the null hypothesis that Model 2’s AUC is no greater than Model 1’s AUC (H0:Diff=AUC_M2-AUC_M1<=0), the p‑value was found to be smaller than 0.05, which means that Model 2 yields a significantly greater AUC than Model 1. Hence, there is enough evidence to suggest that the adjustment made led to a significant improvement in the model's discriminative power.
+All steps are included in the .py file and everything are run on the GPU via CUDA on the CSF of UoM. The job was submitted with a slurm script, and the total runtime was about 12 minutes. The results were copied to personal machine in the slurm-13383344.out file. 
+
+In the results, with the null hypothesis that Model 2’s AUC is no greater than Model 1’s AUC (H0:Diff=AUC_M2-AUC_M1<=0), the p‑value was found to be smaller than 0.05, which means that Model 2 yields a significantly greater AUC than Model 1. Hence, there is enough evidence to suggest that model 2 has stronger discriminative power than model 1.
 
 ---
 
@@ -83,7 +85,7 @@ All in all, in this experiment, we successfully improved performance of a sentim
 ## Files
 
 - `RM2_code_exercise.py` – training and evaluation code
-- `run.sh` – Slurm script
+- `RM2_code_exercise_jobscript.slurm` – Slurm script
 - `slurm-13383344.out` – full output from the CSF run
 - `loss_model1.png` – Model 1 training loss curve
 - `loss_model2.png` – Model 2 training loss curve
