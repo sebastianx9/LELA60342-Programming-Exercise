@@ -8,7 +8,7 @@ In model 1, a sentiment classifier of Amazon reviews from the CL1 coursework is 
 
 In a attempt to imporve the performance of model 1, the second model is created through a few adjustments to the hyperparameters. Both models are based on logistic regression to predict the sentiment (positive or negative) of Amazon product reviews, and the features are one-hot endcoded bag-of-words vectors built from the 5000 most frequent tokens in the dataset.
 
-As for evaluation, besides accuracy and F1-scores, area under the ROC curves were calculated for both models to examine their discriminative power across all thresholds instead of a single cutoff at 50%. Such examination allows insight into how well the models perform with thresholds set catering to a particular need of the task. 
+As for evaluation, besides accuracy and F1-scores, area under the ROC curves were calculated for both models to examine their discriminative power across all thresholds instead of a single cutoff at 50%. Such examination allows insight into how well the models perform with thresholds set catering to particular needs of the task. 
 
 To test the significance of the models' difference in AUC, bootstrap sampling is used on the test set. With corresponding predictions from both models, the AUC difference and its variance are calculated. 
 
